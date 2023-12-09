@@ -1,10 +1,7 @@
 package edu.dpoo.gui;
 
 import edu.dpoo.db.CompanyDB;
-import edu.dpoo.gui.cards.CustomerAccountPanel;
-import edu.dpoo.gui.cards.CustomerLoginPanel;
-import edu.dpoo.gui.cards.CustomerMainPanel;
-import edu.dpoo.gui.cards.CustomerRegisterPanel;
+import edu.dpoo.gui.cards.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,13 +30,23 @@ public class CustomerView extends JFrame implements ActionListener {
             System.exit(1);
         }
 
-        this.loginPanel = new CustomerLoginPanel(this);
+        this.loginPanel = new CustomerLoginPanel();
+        loginPanel.loginButton.addActionListener(this);
+        loginPanel.signUpButton.addActionListener(this);
         add(loginPanel, "login");
-        this.signupPanel = new CustomerRegisterPanel(this);
+
+        this.signupPanel = new CustomerRegisterPanel();
+        signupPanel.loginButton.addActionListener(this);
+        signupPanel.signUpButton.addActionListener(this);
         add(signupPanel, "signup");
-        this.homePanel = new CustomerMainPanel(this);
+
+        this.homePanel = new CustomerMainPanel();
+        homePanel.continueButton.addActionListener(this);
         add(homePanel, "home");
-        this.payingPanel = new CustomerAccountPanel(this);
+
+        this.payingPanel = new CustomerAccountPanel();
+        payingPanel.cancelButton.addActionListener(this);
+        payingPanel.payButton.addActionListener(this);
         add(payingPanel, "paying");
 
         setVisible(true);
@@ -50,12 +57,37 @@ public class CustomerView extends JFrame implements ActionListener {
         new CustomerView();
     }
 
-    @Override public void actionPerformed(ActionEvent e) {
-        StrategyUtils.valueOf(e.getActionCommand()).execute(this);
+    @Override public void actionPerformed(ActionEvent event) {
+        Object source = event.getSource();
+
+        // Identifica la estrategia según la fuente del evento
+        StrategyUtils strategy = null;
+        if (source == loginPanel.loginButton) {
+            strategy = StrategyUtils.L_LOGIN;
+        } else if (source == loginPanel.signUpButton) {
+            strategy = StrategyUtils.L_SIGNUP;
+        } else if (source == signupPanel.loginButton) {
+            strategy = StrategyUtils.S_LOGIN;
+        } else if (source == signupPanel.signUpButton) {
+            strategy = StrategyUtils.S_SIGNUP;
+        } else if (source == homePanel.logOutButton) {
+            strategy = StrategyUtils.CH_LOGOUT;
+        } else if (source == homePanel.continueButton) {
+            strategy = StrategyUtils.CH_CONTINUE;
+        } else if (source == payingPanel.cancelButton) {
+            strategy = StrategyUtils.CP_CANCEL;
+        } else if (source == payingPanel.payButton) {
+            strategy = StrategyUtils.CP_PAY;
+        }
+
+        if (strategy != null) {
+            strategy.execute(this);
+        }
     }
 
+
     public String checkPassword(String password) {
-        return db.checkPassword(password);
+        return CompanyDB.checkPassword(password);
     }
 
     public boolean isDecimal(String s) {
