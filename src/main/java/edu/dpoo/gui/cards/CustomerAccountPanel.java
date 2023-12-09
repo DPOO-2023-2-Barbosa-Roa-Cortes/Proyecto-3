@@ -12,6 +12,7 @@ public class CustomerAccountPanel extends JPanel {
     public JButton payButton;
     public JButton cancelButton;
     public boolean reserve;
+
     public CustomerAccountPanel() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();

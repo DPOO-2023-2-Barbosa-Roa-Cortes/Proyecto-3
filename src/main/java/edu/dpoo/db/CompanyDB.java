@@ -9,12 +9,13 @@ import edu.dpoo.pdf.Billing;
 import edu.dpoo.vehicles.MotorizedVehicle;
 import edu.dpoo.vehicles.NonMotorizedVehicle;
 import edu.dpoo.vehicles.Vehicle;
+import lombok.Getter;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
-public class CompanyDB {
+@Getter public class CompanyDB {
     private static final File registerFolder = new File(Objects.requireNonNull(CompanyDB.class.getResource("databases")).getPath());
     public static final CompanyDB INSTANCE = new CompanyDB();
     public static final Set<Integer> PAYMENT_IDs = new HashSet<>();
@@ -159,6 +160,11 @@ public class CompanyDB {
         } else {
             return this.vehicle = null;
         }
+    }
+
+
+    public boolean exists(String username) {
+        return accounts.get(username) != null;
     }
 
 

@@ -1,10 +1,12 @@
 package edu.dpoo.gui.cards;
 
+import lombok.Getter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class CustomerMainPanel extends JPanel {
+@Getter public class CustomerMainPanel extends JPanel {
     public JRadioButton motorizedRadioButton;
     public JComboBox<String> categoryOrKindComboBox;
     public JComboBox<String> pickUpBranchesComboBox;

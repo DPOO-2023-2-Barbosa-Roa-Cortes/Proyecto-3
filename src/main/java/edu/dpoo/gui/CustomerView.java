@@ -2,6 +2,7 @@ package edu.dpoo.gui;
 
 import edu.dpoo.db.CompanyDB;
 import edu.dpoo.gui.cards.*;
+import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class CustomerView extends JFrame implements ActionListener {
+@Getter public class CustomerView extends JFrame implements ActionListener {
     private CompanyDB db = CompanyDB.getInstance();
     private CustomerLoginPanel loginPanel;
     private CustomerRegisterPanel signupPanel;
@@ -62,27 +63,16 @@ public class CustomerView extends JFrame implements ActionListener {
 
         // Identifica la estrategia según la fuente del evento
         StrategyUtils strategy = null;
-        if (source == loginPanel.loginButton) {
-            strategy = StrategyUtils.L_LOGIN;
-        } else if (source == loginPanel.signUpButton) {
-            strategy = StrategyUtils.L_SIGNUP;
-        } else if (source == signupPanel.loginButton) {
-            strategy = StrategyUtils.S_LOGIN;
-        } else if (source == signupPanel.signUpButton) {
-            strategy = StrategyUtils.S_SIGNUP;
-        } else if (source == homePanel.logOutButton) {
-            strategy = StrategyUtils.CH_LOGOUT;
-        } else if (source == homePanel.continueButton) {
-            strategy = StrategyUtils.CH_CONTINUE;
-        } else if (source == payingPanel.cancelButton) {
-            strategy = StrategyUtils.CP_CANCEL;
-        } else if (source == payingPanel.payButton) {
-            strategy = StrategyUtils.CP_PAY;
-        }
+        if (source == loginPanel.loginButton) strategy = StrategyUtils.L_LOGIN;
+        else if (source == loginPanel.signUpButton) strategy = StrategyUtils.L_SIGNUP;
+        else if (source == signupPanel.loginButton) strategy = StrategyUtils.S_LOGIN;
+        else if (source == signupPanel.signUpButton) strategy = StrategyUtils.S_SIGNUP;
+        else if (source == homePanel.logOutButton) strategy = StrategyUtils.CH_LOGOUT;
+        else if (source == homePanel.continueButton) strategy = StrategyUtils.CH_CONTINUE;
+        else if (source == payingPanel.cancelButton) strategy = StrategyUtils.CP_CANCEL;
+        else if (source == payingPanel.payButton) strategy = StrategyUtils.CP_PAY;
 
-        if (strategy != null) {
-            strategy.execute(this);
-        }
+        if (strategy != null) strategy.execute(this);
     }
 
 
@@ -90,7 +80,7 @@ public class CustomerView extends JFrame implements ActionListener {
         return CompanyDB.checkPassword(password);
     }
 
-    public boolean isDecimal(String s) {
+    public static boolean isDecimal(String s) {
         try {
             Double.parseDouble(s);
             return true;
@@ -99,7 +89,7 @@ public class CustomerView extends JFrame implements ActionListener {
         }
     }
 
-    public boolean isLocalDate(String s) {
+    public static boolean isLocalDate(String s) {
         try {
             java.time.LocalDate.parse(s);
             return true;
@@ -108,7 +98,7 @@ public class CustomerView extends JFrame implements ActionListener {
         }
     }
 
-    public boolean isAvailableRange(LocalDate start, LocalDate end) {
+    public static boolean isAvailableRange(LocalDate start, LocalDate end) {
         LocalDate now = LocalDate.now();
         return start.isAfter(now) || end.isBefore(start);
     }
