@@ -1,9 +1,11 @@
 package edu.dpoo.db;
 
+import edu.dpoo.HashedDataFixer;
 import edu.dpoo.accounts.AdminAccount;
 import edu.dpoo.accounts.CustomerAccount;
 import edu.dpoo.accounts.UserAccount;
 import edu.dpoo.credit.CreditCard;
+import edu.dpoo.credit.MetaManager;
 import edu.dpoo.entities.Branch;
 import edu.dpoo.pdf.Billing;
 import edu.dpoo.vehicles.MotorizedVehicle;
@@ -11,12 +13,14 @@ import edu.dpoo.vehicles.NonMotorizedVehicle;
 import edu.dpoo.vehicles.Vehicle;
 import lombok.Getter;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
 @Getter public class CompanyDB {
-    private static final File registerFolder = new File(Objects.requireNonNull(CompanyDB.class.getResource("databases")).getPath());
     public static final CompanyDB INSTANCE = new CompanyDB();
     public static final Set<Integer> PAYMENT_IDs = new HashSet<>();
     private boolean initialized;
@@ -56,18 +60,18 @@ import java.util.*;
     }
 
     private void loadIDs() {
-        Arrays.stream(registerFolder.listFiles()).map(file -> Integer.parseInt(file.getName().split("\\.")[0]))
+        Arrays.stream(Objects.requireNonNull(HashedDataFixer.BILLS.listFiles())).map(file -> Integer.parseInt(file.getName().split("\\.")[0]))
                 .forEach(PAYMENT_IDs::add);
     }
 
     private void loadBranches() throws IOException {
-        try (BufferedReader branchR = new BufferedReader(new FileReader(new File(registerFolder, "branches.csv")))) {
-             branchR.lines().map(Branch::parse).forEach(branch -> branches.put(branch.getName(), branch));
+        try (BufferedReader branchR = new BufferedReader(new FileReader(new File(HashedDataFixer.DBS, "branches.csv")))) {
+            branchR.lines().map(Branch::parse).forEach(branch -> branches.put(branch.getName(), branch));
         }
     }
 
     private void loadVehicles() throws IOException {
-        try (BufferedReader vehicleR = new BufferedReader(new FileReader(new File(registerFolder, "vehicles.csv")))) {
+        try (BufferedReader vehicleR = new BufferedReader(new FileReader(new File(HashedDataFixer.DBS, "vehicles.csv")))) {
             String[] array = vehicleR.lines().toArray(String[]::new);
             for (String line : array) {
                 Vehicle vehicle;
@@ -83,13 +87,16 @@ import java.util.*;
     }
 
     private void loadCards() throws IOException {
-        try (BufferedReader cardR = new BufferedReader(new FileReader(new File(registerFolder, "credit_cards.csv")))) {
-            cardR.lines().map(CreditCard::parse).forEach(card -> payment.put(card.getHolderFullName(), card));
+        try (BufferedReader cardR = new BufferedReader(new FileReader(new File(HashedDataFixer.DBS, "credit_cards.csv")))) {
+            cardR.lines().map(text -> CreditCard.parse(text).orElseGet(() -> {
+                MetaManager.createSubClass(text.substring(0, text.indexOf(';')));
+                return CreditCard.parse(text).orElse(null);
+            })).filter(Objects::nonNull).forEach(card -> payment.put(card.getHolderFullName(), card));
         }
     }
 
     private void loadAccounts() throws IOException {
-        try (BufferedReader companyR = new BufferedReader(new FileReader(new File(registerFolder, "company_accounts.csv")))) {
+        try (BufferedReader companyR = new BufferedReader(new FileReader(new File(HashedDataFixer.DBS, "company_accounts.csv")))) {
             String[] array = companyR.lines().toArray(String[]::new);
             for (String line : array) {
                 UserAccount account;
@@ -103,7 +110,7 @@ import java.util.*;
             }
         }
 
-        try (BufferedReader customerR = new BufferedReader(new FileReader(new File(registerFolder, "customer_accounts.csv")))) {
+        try (BufferedReader customerR = new BufferedReader(new FileReader(new File(HashedDataFixer.DBS, "customer_accounts.csv")))) {
             String[] array = customerR.lines().toArray(String[]::new);
             Arrays.stream(array).map(CustomerAccount::parse)
                     .forEach(account -> accounts.put(Objects.requireNonNull(account).getUsername(), account));
@@ -115,7 +122,7 @@ import java.util.*;
                 .isAfter(end) : vehicle.getReactivationDate().isBefore(start);
     }
 
-    public void makePayment(String holder, LocalDate start, LocalDate end, boolean reserve){
+    public void makePayment(String holder, LocalDate start, LocalDate end, boolean reserve) {
         Billing.makePayment(reserve, vehicle, payment.get(holder));
         vehicle.setStandBranchName(null);
         vehicle.setReactivationDate(null);

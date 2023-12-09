@@ -54,10 +54,6 @@ import java.time.LocalDate;
         pack();
     }
 
-    public static void main(String[] args) {
-        new CustomerView();
-    }
-
     @Override public void actionPerformed(ActionEvent event) {
         Object source = event.getSource();
 

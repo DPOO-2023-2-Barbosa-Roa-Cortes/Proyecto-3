@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Optional;
 
 @Getter @Setter public class CreditCard {
     private int numbers;
@@ -14,16 +15,22 @@ import java.util.Objects;
     private double capacity;
     private double retained;
 
-    public static CreditCard parse(String text) {
+    public static Optional<CreditCard> parse(String text) {
         String[] format = text.split(";");
-        CreditCard instance = MetaManager.fromName(format[0] + "CreditCard");
-        instance.numbers = Integer.parseInt(format[0]);
-        instance.holderFullName = format[1];
-        instance.expirationDate = LocalDate.parse(format[2]);
-        instance.cvc = Integer.parseInt(format[3]);
-        instance.capacity = format.length > 4 ? Double.parseDouble(format[4]) : 1_000_000;
-        instance.retained = format.length > 5 ? Double.parseDouble(format[5]) : 0;
-        return instance;
+
+        CreditCard instance;
+        try {
+            instance = MetaManager.fromName(format[0] + "CreditCard");
+            instance.numbers = Integer.parseInt(format[0]);
+            instance.holderFullName = format[1];
+            instance.expirationDate = LocalDate.parse(format[2]);
+            instance.cvc = Integer.parseInt(format[3]);
+            instance.capacity = format.length > 4 ? Double.parseDouble(format[4]) : 1_000_000;
+            instance.retained = format.length > 5 ? Double.parseDouble(format[5]) : 0;
+            return Optional.of(instance);
+        } catch (ReflectiveOperationException e) {
+            return Optional.empty();
+        }
     }
 
     public double getNetCapacity() {

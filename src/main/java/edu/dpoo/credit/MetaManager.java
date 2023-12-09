@@ -17,11 +17,7 @@ public class MetaManager {
         } catch (Exception ignored) {}
     }
 
-    public static CreditCard fromName(String name) {
-        try {
-            return (CreditCard) Class.forName("edu.dpoo.cards." + name + "CreditCard").getConstructor().newInstance();
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
-        }
+    public static CreditCard fromName(String name) throws ReflectiveOperationException {
+        return (CreditCard) Class.forName("edu.dpoo.cards." + name + "CreditCard").getConstructor().newInstance();
     }
 }

@@ -1,21 +1,19 @@
 package edu.dpoo.pdf;
 
+import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfWriter;
+import edu.dpoo.HashedDataFixer;
 import edu.dpoo.credit.CreditCard;
 import edu.dpoo.vehicles.Vehicle;
-
-import com.itextpdf.text.Document;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Billing {
-    private static final File registerFolder = new File(Objects.requireNonNull(Billing.class.getResource("databases")).getPath());
     public static int ID = 0;
 
     public static void makePayment(boolean reserve, Vehicle vehicle, CreditCard card) {
@@ -25,7 +23,7 @@ public class Billing {
 
         try {
             Document doc = new Document();
-            PdfWriter.getInstance(doc, new FileOutputStream(new File(registerFolder, id + ".pdf")));
+            PdfWriter.getInstance(doc, new FileOutputStream(new File(HashedDataFixer.BILLS, id + ".pdf")));
             doc.open();
 
             // Set document metadata
@@ -48,7 +46,8 @@ public class Billing {
             doc.add(new Phrase("Payment Date: " + LocalDate.now() + "\n\n"));
 
             // Reservation/Rental Information
-            doc.add(new Phrase("Reservation/Rental Period: " + LocalDate.now() + " to " + LocalDate.now().plusDays(1) + "\n"));
+            doc.add(new Phrase("Reservation/Rental Period: " + LocalDate.now() + " to " + LocalDate.now()
+                    .plusDays(1) + "\n"));
             doc.add(new Phrase("Status: " + (reserve ? "Reserved" : "Not Reserved") + "\n\n"));
 
             // Additional Information

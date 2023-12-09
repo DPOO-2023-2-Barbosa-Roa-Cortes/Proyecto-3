@@ -37,6 +37,6 @@ import java.time.LocalDate;
     }
 
     public enum Category {
-        Bicycle, Scooter, Skateboard, ElectricBicycle, ElectricScooter, ElectricSkateboard
+        Bike, Scooter, Skateboard, ElectricBike, ElectricScooter, ElectricSkateboard
     }
 }

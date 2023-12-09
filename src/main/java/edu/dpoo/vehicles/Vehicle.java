@@ -25,7 +25,7 @@ import java.time.LocalDate;
 
     private DangerLevel dangerousness;
 
-    public enum DangerLevel {LOW, MEDIUM, HIGH}
+    public enum DangerLevel {Low, Medium, High}
 
     public double price() {
         return BASE_PRICE * (1 + (double) (dangerousness.ordinal() * 2) / 10);

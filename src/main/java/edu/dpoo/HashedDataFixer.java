@@ -1,6 +1,7 @@
 package edu.dpoo;
 
 import edu.dpoo.gui.CustomerView;
+import lombok.SneakyThrows;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -8,11 +9,19 @@ import java.util.List;
 import java.util.Objects;
 
 public class HashedDataFixer {
+    public static final File DBS = new File(Objects.requireNonNull(HashedDataFixer.class.getResource("/databases"))
+            .getPath().replace("%20", " "));
+    public static final File BILLS = new File(Objects.requireNonNull(HashedDataFixer.class.getResource("/bills"))
+            .getPath().replace("%20", " "));
+
     public static void main(String[] args) {
-        File databaseFolder = new File(Objects.requireNonNull(HashedDataFixer.class.getResource("databases")).getPath());
+        System.out.println(HashedDataFixer.class.getResource("/bills"));
+        File databaseFolder = DBS;
 
         String[][] read = IOUtils.read(databaseFolder);
         IOUtils.write(databaseFolder, read[0], read[1], read[2]);
+
+        new CustomerView();
     }
 }
 
@@ -21,8 +30,9 @@ class IOUtils {
         throw new UnsupportedOperationException();
     }
 
-    static String[][] read(File databaseFolder) {
-        try (BufferedReader unhashed = new BufferedReader(new FileReader(new File(databaseFolder, "un-hashed-sources.csv")))){
+    @SneakyThrows static String[][] read(File databaseFolder) {
+
+        try (BufferedReader unhashed = new BufferedReader(new FileReader(new File(databaseFolder, "un-hashed-sources.csv")))) {
             String[] data = unhashed.lines().toArray(String[]::new);
 
             int index = 1;
@@ -37,7 +47,7 @@ class IOUtils {
                 company.add(String.join(";", line));
                 index++;
             }
-            index+=2;
+            index += 2;
 
             while (index < data.length && !data[index].isEmpty()) {
                 String[] line = data[index].split(";");
@@ -45,7 +55,7 @@ class IOUtils {
                 customers.add(String.join(";", line));
                 index++;
             }
-            index+=2;
+            index += 2;
 
             while (index < data.length && !data[index].isEmpty()) {
                 String[] line = data[index].split(";");
