@@ -174,4 +174,15 @@ public class CompanyDB {
     public void logoutCustomer() {
         customer = null;
     }
+
+    public boolean addRegister(UserAccount account) {
+        try {
+            if (accounts.containsKey(account.getUsername())) return false;
+            accounts.put(account.getUsername(), account);
+            loadAccounts();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
 }
