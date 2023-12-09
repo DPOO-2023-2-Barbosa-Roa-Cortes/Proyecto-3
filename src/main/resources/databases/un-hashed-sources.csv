@@ -1,0 +1,57 @@
+## Company Accounts (kind;full_name;username;password) | (kind;full_name;username;password;branch)
+GLOBAL;LoganTaurus;AInfinityNexus;root
+LOCAL;John Doe;johndoe123;pass123;SpeedyWheels Central
+LOCAL;Emma Johnson;emmajohnson456;pass456;Summit Drive Rent-a-Car
+LOCAL;Michael Williams;michaelw456;pass789;UrbanRide Rentals
+LOCAL;Alice White;alicewhite22;pass22;Horizon Motors Hub
+LOCAL;Robert Davis;robertd123;pass123;Coastal Cruisers Center
+LOCAL;Emily Turner;emilyt456;pass456;MetroMile Car Hire
+LOCAL;Daniel Harris;danielh87;pass87;ValleyView Auto Rentals
+LOCAL;Sophia Martinez;sophiam55;pass55;Skyline Wheels Station
+LOCAL;Oliver Robinson;oliverr99;pass99;Oasis Rent-a-Car Plaza
+LOCAL;Grace Lee;gracelee98;pass98;Sunrise Motors Depot
+
+## Customer Accounts (full_name;username;password;address;city;cellphone_number;birthdate in YYYY-MM-DD;country;country_cellphone_indicative;identification_number;license_number,expedition_country,expiration_date in YYYY-MM-DD)
+John Smith;johnsmith123;Pass@word123;1234 Elm St;New York;1234567890;1990-05-15;USA;+1;12345678;12345678,USA,2025-05-15
+Emma Johnson;emmajohnson456;Password@456;5678 Oak St;Los Angeles;9876543210;1988-08-25;Canada;+1;12345678;12345678,Canada,2024-10-10
+Michael Williams;michaelw456;Pass789@word;2468 Pine St;Chicago;5556667777;1995-02-12;UK;+44;12345678;12345678,UK,2023-12-31
+Alice White;alicewhite22;Pa$$word22;789 Cherry Lane;San Francisco;5551234567;1991-11-18;USA;+1;12345678;90123456,USA,2026-07-30
+Robert Davis;robertd123;Pa$$w0rd123;369 Elmwood Ave;Miami;5559876543;1985-06-25;Canada;+1;12345678;56789012,Canada,2025-09-15
+Emily Turner;emilyt456;Pa$$word!456;1234 Oak Lane;Seattle;5557890123;1998-03-07;UK;+44;12345678;23456789,UK,2024-05-20
+Daniel Harris;danielh87;P@ssword87;5678 Willow St;Boston;5553456789;1993-09-12;USA;+1;12345678;67890123,USA,2023-11-28
+Sophia Martinez;sophiam55;P@ssword#55;2589 Cedar Ave;Houston;5552345678;1980-12-30;Canada;+1;12345678;12345678,Canada,2022-12-15
+Oliver Robinson;oliverr99;P@ssword99;9632 Birch St;Atlanta;5558765432;1975-05-03;UK;+44;12345678;78901234,UK,2026-01-05
+Grace Lee;gracelee98;P@ssword!98;7410 Maple Ave;Chicago;5556543210;1996-08-22;USA;+1;12345678;90123456,USA,2027-03-10
+William Johnson;williamj567;Pa$$word567;4567 Elm St;Los Angeles;5559876543;1990-10-12;USA;+1;1234567890;1234567890,USA,2025-07-20
+Sophie Brown;sophieb123;Pa$$word123;7890 Oak Ave;San Francisco;5551234567;1988-05-25;Canada;+1;2345678901;2345678901,Canada,2024-11-30
+Ethan Clark;ethanc99;P@ssword99;123 Maple St;Miami;5554567890;1995-12-18;UK;+44;3456789012;3456789012,UK,2023-08-15
+Ava Rodriguez;avar456;P@ssword!456;9876 Cedar Ave;Seattle;5557890123;1998-03-07;USA;+1;4567890123;4567890123,USA,2026-05-12
+Logan Wright;loganw88;P@ssword88;3210 Pine Lane;Boston;5552345678;1993-09-12;Canada;+1;5678901234;5678901234,Canada,2025-12-28
+Luna King;lunak75;P@ssword#75;6543 Willow St;Houston;5553456789;1980-12-30;UK;+44;6789012345;6789012345,UK,2023-11-05
+Henry Baker;henryb99;P@ssword99;8967 Cherry Ave;Atlanta;5558765432;1975-05-03;USA;+1;7890123456;7890123456,USA,2027-02-18
+Zoe Carter;zoec99;P@ssword!99;7410 Oak Ave;Chicago;5556543210;1996-08-22;Canada;+1;8901234567;8901234567,Canada,2022-09-10
+Mia Hill;miah98;P@ssword98;8521 Cedar St;Los Angeles;5551234567;1991-11-18;UK;+44;9012345678;9012345678,UK,2024-07-30
+Jacob Garcia;jacobg11;Pa$$word11;9634 Birch Lane;Miami;5559876543;1985-06-25;USA;+1;1234567890;1234567890,USA,2026-09-15
+
+## Available Credit Cards (numbers;holder_full_name;expiration_date in YYYY-MM;cvc[;capacity (double ammount to spend (optional) );retained (ammont blocked to spend (optional, capacity obligadory))])
+Itau;1234567812345678;John Smith;2025-11-01;123;15000;500
+Itau;2345678923456789;Emma Johnson;2024-06-01;234;20000;750
+Itau;3456789034567890;Michael Williams;2023-09-01;345;18000;600
+Itau;4567890145678901;Alice White;2026-02-01;456;22000;800
+Itau;5678901256789012;Robert Davis;2025-05-01;567;19000;700
+Itau;6789012367890123;Emily Turner;2024-08-01;678;21000;750
+Itau;7890123478901234;Daniel Harris;2023-12-01;789;20000;800
+Itau;8901234589012345;Sophia Martinez;2022-07-01;890;17000;600
+Itau;9012345690123456;Oliver Robinson;2026-04-01;901;23000;850
+Itau;1234123512341234;Grace Lee;2027-01-01;123;24000;900
+Bancolombia;2345123423451234;William Johnson;2025-06-01;234;18000;600
+Bancolombia;3456234534562345;Sophie Brown;2024-10-01;345;19000;700
+Bancolombia;4567345645673456;Ethan Clark;2023-11-01;456;20000;750
+Bancolombia;5678456756784567;Ava Rodriguez;2026-03-01;567;22000;800
+Bancolombia;6789567867895678;Logan Wright;2025-12-01;678;19000;700
+Bancolombia;7890678978906789;Luna King;2023-09-01;789;18000;650
+Bancolombia;8901789089017890;Henry Baker;2027-02-01;890;21000;750
+Bancolombia;9012890190128901;Zoe Carter;2022-11-01;901;20000;800
+BBVA;1234567812345678;Mia Hill;2024-04-01;123;22000;800
+BBVA;2345678923456789;Jacob Garcia;2026-10-01;234;23000;850
+PayPal;3456789034567890;Emma Johnson;2024-06-01;345;19000;700

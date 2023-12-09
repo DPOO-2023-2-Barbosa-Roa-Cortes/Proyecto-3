@@ -1,0 +1,50 @@
+Motorized;ABC123;(-34.6037, -58.3816, 0.0);BMW;true;johnsmith123;2023-11-10;2023-11-15;SpeedyWheels Central;null;null;High;Luxury;X5;Automatic
+Motorized;DEF456;(-33.8688, 151.2093, 0.0);Volvo;true;emmajohnson456;2023-12-05;2023-12-10;Summit Drive Rent-a-Car;null;null;Low;Economy;XC40;Manual
+Motorized;GHI789;(51.5074, -0.1278, 0.0);Audi;false;null;null;null;null;UrbanRide Rentals;2023-12-10;Medium;Compact;A4;Automatic
+Motorized;JKL012;(-23.5505, -46.6333, 0.0);Mercedes-Benz;false;null;null;null;null;Horizon Motors Hub;2023-12-15;Low;Van;Sprinter;Automatic
+Motorized;MNO345;(39.9042, 116.4074, 0.0);Toyota;true;michaelw456;2023-11-20;2023-11-25;Coastal Cruisers Center;null;null;High;Standard;Camry;Automatic
+Motorized;PQR678;(34.0522, -118.2437, 0.0);Hyundai;false;null;null;null;null;MetroMile Car Hire;2023-12-05;Medium;Economy;Elantra;Manual
+Motorized;STU901;(-22.9068, -43.1729, 0.0);Ford;true;alicewhite22;2023-11-25;2023-11-30;ValleyView Auto Rentals;null;null;Low;Compact;Fusion;Automatic
+Motorized;VWX234;(-33.8688, 151.2093, 0.0);Chevrolet;false;null;null;null;null;Skyline Wheels Station;2023-12-20;High;Luxury;Corvette;Automatic
+Motorized;YZA567;(34.0522, -118.2437, 0.0);Nissan;true;robertd123;2023-11-30;2023-12-05;Oasis Rent-a-Car Plaza;null;null;Medium;Standard;Altima;Automatic
+Motorized;BCD890;(40.7128, -74.006, 0.0);Honda;false;null;null;null;null;Sunrise Motors Depot;2023-12-25;High;Van;Odyssey;Automatic
+Motorized;EFG123;(35.6895, 139.6917, 0.0);Tesla;true;johnsmith123;2023-11-10;2023-11-15;SpeedyWheels Central;null;null;High;Luxury;Model S;Automatic
+Motorized;HIJ456;(48.8566, 2.3522, 0.0);Kia;true;emmajohnson456;2023-12-05;2023-12-10;Summit Drive Rent-a-Car;null;null;Low;Economy;Sportage;Manual
+Motorized;KLM789;(55.7558, 37.6173, 0.0);Jaguar;false;null;null;null;null;UrbanRide Rentals;2023-12-10;Medium;Compact;XF;Automatic
+Motorized;NOP012;(40.7128, -74.006, 0.0);Mazda;false;null;null;null;null;Horizon Motors Hub;2023-12-15;Low;Van;CX-5;Automatic
+Motorized;QRS345;(37.7749, -122.4194, 0.0);Subaru;true;michaelw456;2023-11-20;2023-11-25;Coastal Cruisers Center;null;null;High;Standard;Outback;Automatic
+Motorized;TUV678;(51.5074, -0.1278, 0.0);Jeep;false;null;null;null;null;MetroMile Car Hire;2023-12-05;Medium;Economy;Wrangler;Manual
+Motorized;VWX901;(25.7617, -80.1918, 0.0);Lamborghini;true;alicewhite22;2023-11-25;2023-11-30;ValleyView Auto Rentals;null;null;Low;Compact;Huracan;Automatic
+Motorized;YZA234;(34.0522, -118.2437, 0.0);Ferrari;false;null;null;null;null;Skyline Wheels Station;2023-12-20;High;Luxury;488;Automatic
+Motorized;BCD567;(40.7128, -74.006, 0.0);Porsche;true;robertd123;2023-11-30;2023-12-05;Oasis Rent-a-Car Plaza;null;null;Medium;Standard;911;Automatic
+Motorized;EFG890;(34.0522, -118.2437, 0.0);Aston Martin;false;null;null;null;null;Sunrise Motors Depot;2023-12-25;High;Van;DB11;Automatic
+Motorized;HIJ123;(51.5074, -0.1278, 0.0);Ford;false;johnsmith123;2024-01-01;2024-01-10;SpeedyWheels Central;null;null;Medium;Standard;Mustang;Automatic
+Motorized;KLM456;(40.7128, -74.006, 0.0);Toyota;true;sophiam55;2023-12-15;2023-12-20;Summit Drive Rent-a-Car;null;null;High;Luxury;Camry;Automatic
+Motorized;NOP789;(34.0522, -118.2437, 0.0);Chevrolet;false;null;null;null;null;UrbanRide Rentals;2023-12-20;Low;Compact;Tahoe;Automatic
+Motorized;QRS012;(35.6895, 139.6917, 0.0);Dodge;true;oliverr99;2023-12-25;2023-12-30;Horizon Motors Hub;null;null;High;Van;Charger;Automatic
+Motorized;TUV345;(37.7749, -122.4194, 0.0);BMW;false;null;null;null;null;Coastal Cruisers Center;2023-12-30;Medium;Economy;X5;Automatic
+Motorized;VWX678;(48.8566, 2.3522, 0.0);Mercedes-Benz;true;williamj567;2024-01-05;2024-01-10;MetroMile Car Hire;null;null;Low;Standard;C-Class;Automatic
+Motorized;YZA901;(55.7558, 37.6173, 0.0);Volkswagen;false;null;null;null;null;ValleyView Auto Rentals;2024-01-10;Medium;Compact;Golf;Manual
+Motorized;BCD234;(25.7617, -80.1918, 0.0);Hyundai;true;sophieb123;2024-01-15;2024-01-20;Skyline Wheels Station;null;null;High;Economy;Elantra;Automatic
+Motorized;EFG567;(34.0522, -118.2437, 0.0);Audi;false;null;null;null;null;Oasis Rent-a-Car Plaza;2024-01-20;Low;Luxury;A4;Automatic
+Motorized;HIJ890;(35.6895, 139.6917, 0.0);Volvo;true;ethanc99;2024-01-25;2024-01-30;Sunrise Motors Depot;null;null;Medium;Van;XC60;Automatic
+NonMotorized;0;(51.5074, -0.1278, 0.0);Trek;false;null;null;null;null;SpeedyWheels Central;2023-12-10;Low;Bike
+NonMotorized;1;(40.7128, -74.006, 0.0);Giant;true;johnsmith123;2023-12-15;2023-12-20;Summit Drive Rent-a-Car;null;null;Low;ElectricBike
+NonMotorized;2;(34.0522, -118.2437, 0.0);Santa Cruz;false;null;null;null;null;UrbanRide Rentals;2023-12-20;Low;Skateboard
+NonMotorized;3;(35.6895, 139.6917, 0.0);Brompton;true;michaelw456;2023-12-25;2023-12-30;Horizon Motors Hub;null;null;Low;ElectricSkateboard
+NonMotorized;4;(37.7749, -122.4194, 0.0);Specialized;false;null;null;null;null;Coastal Cruisers Center;2023-12-30;Low;Bike
+NonMotorized;5;(48.8566, 2.3522, 0.0);Scott;true;emmajohnson456;2024-01-05;2024-01-10;MetroMile Car Hire;null;null;Low;ElectricBike
+NonMotorized;6;(55.7558, 37.6173, 0.0);Sector 9;false;null;null;null;null;ValleyView Auto Rentals;2024-01-10;Low;Skateboard
+NonMotorized;7;(25.7617, -80.1918, 0.0);Boosted;true;sophiam55;2024-01-15;2024-01-20;Skyline Wheels Station;null;null;Low;ElectricSkateboard
+NonMotorized;8;(34.0522, -118.2437, 0.0);Cannondale;false;null;null;null;null;Oasis Rent-a-Car Plaza;2024-01-20;Low;Bike
+NonMotorized;9;(35.6895, 139.6917, 0.0);Inboard;true;williamj567;2024-01-25;2024-01-30;Sunrise Motors Depot;null;null;Low;ElectricSkateboard
+NonMotorized;10;(51.5074, -0.1278, 0.0);Schwinn;false;null;null;null;null;SpeedyWheels Central;2024-02-05;Low;Bike
+NonMotorized;11;(40.7128, -74.006, 0.0);Ridgeback;true;johnsmith123;2024-02-10;2024-02-15;Summit Drive Rent-a-Car;null;null;Low;ElectricBike
+NonMotorized;12;(34.0522, -118.2437, 0.0);Zero;false;null;null;null;null;UrbanRide Rentals;2024-02-15;Low;Skateboard
+NonMotorized;13;(35.6895, 139.6917, 0.0);Mongoose;true;michaelw456;2024-02-20;2024-02-25;Horizon Motors Hub;null;null;Low;ElectricSkateboard
+NonMotorized;14;(37.7749, -122.4194, 0.0);Fuji;false;null;null;null;null;Coastal Cruisers Center;2024-02-25;Low;Bike
+NonMotorized;15;(48.8566, 2.3522, 0.0);Penny;true;emmajohnson456;2024-03-01;2024-03-06;MetroMile Car Hire;null;null;Low;Skateboard
+NonMotorized;16;(55.7558, 37.6173, 0.0);Santa Monica;false;null;null;null;null;ValleyView Auto Rentals;2024-03-06;Low;ElectricSkateboard
+NonMotorized;17;(25.7617, -80.1918, 0.0);Stratos;true;sophiam55;2024-03-10;2024-03-15;Skyline Wheels Station;null;null;Low;ElectricSkateboard
+NonMotorized;18;(34.0522, -118.2437, 0.0);Diamondback;false;null;null;null;null;Oasis Rent-a-Car Plaza;2024-03-15;Low;Bike
+NonMotorized;19;(35.6895, 139.6917, 0.0);Boosted Mini;true;williamj567;2024-03-20;2024-03-25;Sunrise Motors Depot;null;null;Low;ElectricSkateboard
